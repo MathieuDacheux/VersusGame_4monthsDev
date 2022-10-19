@@ -63,8 +63,8 @@
 
 .fighterOne img {
     bottom: 20%;
-    left: 40px;
-    animation: translateFighterOne 2s ease;
+    left: 45%;
+    animation: translateFighterOne 2.5s ease;
 }
 
 @keyframes translateFighterOne {
@@ -72,15 +72,15 @@
         left: -100px;
     }
     100% {
-        left: 40px;
+        left: 45%;
     }
 }
 
 .fighterTwo img {
     transform: scaleX(-1);
     bottom: 17%;
-    right: 40px;
-    animation: translateFighterTwo 2s ease;
+    right: 45%;
+    animation: translateFighterTwo 2.5s ease;
 }
 
 @keyframes translateFighterTwo {
@@ -88,7 +88,7 @@
         right: -100px;
     }
     100% {
-        right: 40px;
+        right: 45%;
     }
 }
 
@@ -101,10 +101,10 @@
     .fighterOne img {
         bottom: 22%;
         left: 75%;
-        animation: translateFighterOne 7s ease;
+        animation: translateFighterOneDesktop 7s ease;
     }
     
-    @keyframes translateFighterOne {
+    @keyframes translateFighterOneDesktop {
         0% {
             left: -100px;
         }
@@ -117,10 +117,10 @@
         transform: scaleX(-1);
         bottom: 15%;
         right: 75%;
-        animation: translateFighterTwo 7s ease;
+        animation: translateFighterTwoDesktop 7s ease;
     }
     
-    @keyframes translateFighterTwo {
+    @keyframes translateFighterTwoDesktop {
         0% {
             right: -100px;
         }

@@ -1,7 +1,7 @@
     <!-- Header Section -->
     <header>
         <nav class="flexCenterCenter">
-            <h1>Shovel Knigh VS Orc Master</h1>
+            <h1>Shovel Knight VS Knight Master</h1>
         </nav>
     </header>
     
@@ -9,7 +9,7 @@
     <main>
         <section class="containerResults flexCenterCenter">
             <div class="contentResults flexCenterColumn">
-                <div class="containerContent flexCenterColumn">
+                <div class="containerContent flexCenterCenterColumn hidden">
                     <?php while ($hero->health > 0 && $orc->health > 0) {
                         $result = Character::fightBetweenHeroAndOrc($hero, $orc);
                         echo $result;
@@ -27,7 +27,7 @@
         </section>
         <section class="inputFunction flexCenterCenter">
             <div class="triggerFight">
-                <p>Combattre</p>
+                <p class="button">Combattre</p>
             </div>
         </section>
     </main>

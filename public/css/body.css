@@ -5,6 +5,7 @@
 .containerResults {
     width: 100%;
     height: 200px;
+    position: relative;
 }
 
 .containerTitle {
@@ -13,12 +14,33 @@
 }
 
 .containerContent {
-    height: calc(200px - 50px);
-    width: 100%;
-    padding: 0rem .5rem .5rem .5rem;
+    width: 300px;
     overflow: hidden;
+    background-color: var(--title);
+    position: absolute;
+    height: 300px;
+    top: 0px;
+    border-radius: 50%;
+    padding: 0rem .5rem .5rem .5rem;
+    background: url('../assets/img/shield.png');
+    background-size: cover;
+    background-position: center;
 }
 
+.messageFight {
+    text-align: center;
+    width: 90%;
+    font-size: 1.75rem;
+    color: white;
+}
+
+.win {
+    color: var(--win);
+}
+
+.lose {
+    color: var(--lose);
+}
 /*********************** ************************/
 /*************** CONTAINER FIGHTER **************/
 /*********************** ************************/
@@ -40,7 +62,7 @@
 }
 
 .fighterOne img {
-    bottom: 23%;
+    bottom: 20%;
     left: 40px;
     animation: translateFighterOne 2s ease;
 }
@@ -54,18 +76,9 @@
     }
 }
 
-@keyframes translateDuringFighterOne {
-    0% {
-        left: 40px;
-    }
-    100% {
-        left: 50px;
-    }
-}
-
 .fighterTwo img {
     transform: scaleX(-1);
-    bottom: 19%;
+    bottom: 17%;
     right: 40px;
     animation: translateFighterTwo 2s ease;
 }
@@ -79,12 +92,41 @@
     }
 }
 
-@keyframes translateDuringFighterTwo {
-    0% {
-        right: 40px;
+@media screen and (min-width: 1200px) {
+    .containerFighter img {
+        width: 250px;
+        position: absolute;
     }
-    100% {
-        right: 50px;
+    
+    .fighterOne img {
+        bottom: 22%;
+        left: 75%;
+        animation: translateFighterOne 7s ease;
+    }
+    
+    @keyframes translateFighterOne {
+        0% {
+            left: -100px;
+        }
+        100% {
+            left: 75%;
+        }
+    }
+    
+    .fighterTwo img {
+        transform: scaleX(-1);
+        bottom: 15%;
+        right: 75%;
+        animation: translateFighterTwo 7s ease;
+    }
+    
+    @keyframes translateFighterTwo {
+        0% {
+            right: -100px;
+        }
+        100% {
+            right: 75%;
+        }
     }
 }
 
@@ -100,7 +142,7 @@
 .triggerFight {
     padding: .5rem 1rem;
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--button);
 }
 
 .triggerFight, .triggerFight p {

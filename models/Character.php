@@ -37,13 +37,13 @@ class Character {
 
         // Affichage des points de vie et de la rage des personnages à chaque tour
         if ($hero->health <= 0) {
-            $message = '<p class="hidden">Le chevalier est mort !</p>';
+            $message = '<p class="hidden messageFight lose">Le chevalier est mort !</p>';
             return $message;
         } else if ($orc->health <= 0) {
-            $message = '<p class="hidden">Le chevalier a gagné !</p>';
+            $message = '<p class="hidden messageFight win">Le chevalier a gagne !</p>';
             return $message;
         } else {
-            $message = '<p class="hidden">Le chevalier a '.$hero->health.' points de vie et '.$hero->rage.' points de rage, l\'orc a '.$orc->health.' points de vie.</p>';
+            $message = '<p class="hidden messageFight">Le chevalier a '.$hero->health.' points de vie et '.$hero->rage.' points de rage, l\'ennemi a '.$orc->health.' points de vie.</p>';
             return $message;
         }
     }

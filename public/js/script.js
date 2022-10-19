@@ -11,17 +11,17 @@ const triggerButton = document.querySelector('.triggerFight');
 
 // Récupération du fighterOne ainsi que les liens vers toutes ses animations
 let fighterOne = document.querySelector('.fighterOneImg');
-const fighterOneWalk = '../public/assets/img/firstKnight/walk.gif';
 const fighterOneIDLE = '../public/assets/img/firstKnight/idle.gif';
 const fighterOneFight = '../public/assets/img/firstKnight/fight.gif';
 const fighterOneDie = '../public/assets/img/firstKnight/die.gif';
+const fighterOneWin = '../public/assets/img/firstKnight/win.gif';
 
 // Récupération du fighterTwo ainsi que les liens vers toutes ses animations
 let fighterTwo = document.querySelector('.fighterTwoImg');
-const fighterTwoWalk = '../public/assets/img/secondtKnight/walk.gif';
 const fighterTwoIDLE = '../public/assets/img/secondKnight/idle.gif';
 const fighterTwoFight = '../public/assets/img/secondKnight/fight.gif';
 const fighterTwoDie = '../public/assets/img/secondKnight/die.gif';
+const fighterTwoWin = '../public/assets/img/secondKnight/win.gif';
 
 /******************** ********************/
 /**************** FONCTIONS **************/
@@ -33,24 +33,41 @@ const changeFightersImage = (fighterOne, fighterTwo, imageOne, imageTwo) => {
     fighterTwo.src = imageTwo;
 }
 
+// Changement des images des combattants à l'issu du combat
+const whichDie = (messagesForFight, fighterOne, fighterTwo, index) => {
+    if (messagesForFight[index].textContent == 'Le chevalier est mort !') {
+        fighterOne.src = fighterOneDie;
+        fighterTwo.src = fighterTwoWin;
+    } else if (messagesForFight[index].textContent == 'Le chevalier a gagne !') {
+        fighterTwo.src = fighterTwoDie;
+        fighterOne.src = fighterOneWin;
+    }
+}
+
 // Affichage des messages de combat
 const showMessages = (messages) => {
     for (let i = 0; i < messages.length; i++) {
         setTimeout(() => {
+            if (i >= 1) {
+                messages[i - 1].classList.add('hidden');
+            }
             messages[i].classList.remove('hidden');
+            whichDie(messages, fighterOne, fighterTwo, i);
         }, 1000 * i);
     };
 }
 
-// Changement des images des combattants à l'issu du combat
-const whichDie = (messagesForFight, fighterOne, fighterTwo) => {
-    if (messagesForFight[messagesForFight.length - 1].textContent == 'Le chevalier est mort !') {
-        fighterOne.src = fighterOneDie;
-        fighterTwo.src = fighterTwoIDLE;
-    } else if (messagesForFight[messagesForFight.length - 1].textContent == 'Le chevalier a gagné !') {
-        fighterTwo.src = fighterTwoDie;
-        fighterOne.src = fighterOneIDLE;
-    }
+// Affichage du bouclier
+const showShield = (containerContent) => {
+    containerContent.classList.remove('hidden');
+}
+
+const deleteLastMessage = (messagesForFight) => {
+    messagesForFight[messagesForFight.length - 1].classList.add('hidden');
+}
+
+const deleteShield = (containerContent) => {
+    containerContent.classList.add('hidden');
 }
 
 /******************** ********************/
@@ -59,13 +76,15 @@ const whichDie = (messagesForFight, fighterOne, fighterTwo) => {
 
 setTimeout(() => {
     changeFightersImage(fighterOne, fighterTwo, fighterOneIDLE, fighterTwoIDLE);
-}, 2000);
+}, 5500);
 
 triggerButton.addEventListener('click', () => {
+    showShield(containerContent);
     changeFightersImage(fighterOne, fighterTwo, fighterOneFight, fighterTwoFight);
     showMessages(messagesForFight);
     setTimeout(() => {
-        whichDie(messagesForFight, fighterOne, fighterTwo);
-    }, 5000);
+        deleteLastMessage(messagesForFight);
+        deleteShield(containerContent);
+    }, 8000);
 });
 

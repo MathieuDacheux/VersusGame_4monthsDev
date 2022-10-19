@@ -73,9 +73,9 @@ class Hero extends Character {
     // Méthode calculant les dommages en fonction du dommage, de la valeur de l'armure et de l'attaque
     public function attacked($damage) {
         if ($this->getShieldValue() > $damage) {
-            $this->setShieldValue($this->getShieldValue() - $damage) ;
+            $this->setShieldValue($this->getShieldValue() - $damage);
         } else {
-            $this->setHealth($damage - $this->getShieldValue());
+            $this->setHealth($this->getHealth() - ($damage - $this->getShieldValue()));
             $this->setShieldValue(0);
         }
     }

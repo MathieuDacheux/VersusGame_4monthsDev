@@ -14,32 +14,40 @@ class Character {
     }
 
     // Récupération des attributs
-    public function __get($attr) {
-        return $this->$attr;
+    public function getHealth(): int {
+        return $this->health;
+    }
+
+    public function getRage(): int {
+        return $this->rage;
     }
 
     // Mise à jour des attributs
-    public function __set($attr, $value) {
-        $this->$attr = $value;
+    public function setHealth (int $health): void {
+        $this->health = $health;
+    }
+
+    public function setRage (int $rage): void {
+        $this->rage = $rage;
     }
 
     public static function fightBetweenHeroAndOrc ($hero, $orc) {
-        if ($hero->rage >= 100) {
+        if ($hero->getRage() >= 100) {
             // Modification des points de vie et augmentation de la rage
-            $orc->attacked($hero->weaponDamage * 2);
-            $hero->increaseRage($hero->rage);
+            $orc->attacked($hero->getWeaponDamage() * 2);
+            $hero->setRage(0);
         } else {
             // Modification des points de vie et augmentation de la rage
-            $hero->attacked($orc->damage);
-            $orc->attacked($hero->weaponDamage);
-            $hero->increaseRage($hero->rage);
+            $hero->attacked($orc->getDamage());
+            $orc->attacked($hero->getWeaponDamage());
+            $hero->increaseRage();
         }
 
         // Affichage des points de vie et de la rage des personnages à chaque tour
-        if ($hero->health <= 0) {
+        if ($hero->getHealth() <= 0) {
             $message = '<p class="hidden messageFight lose">Le chevalier est mort !</p>';
             return $message;
-        } else if ($orc->health <= 0) {
+        } else if ($orc->getHealth() <= 0) {
             $message = '<p class="hidden messageFight win">Le chevalier a gagne !</p>';
             return $message;
         } else {

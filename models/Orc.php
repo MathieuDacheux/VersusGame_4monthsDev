@@ -12,13 +12,17 @@ class Orc extends Character {
     }
 
     // Récupération des attributs
-    public function __get($attr) {
-        return $this->$attr;
+    public function getHealth(): int {
+        return $this->health;
     }
 
-    // Mise à jour des attributs
-    public function __set($attr, $value) {
-        $this->$attr = $value;
+    public function getDamage(): int {
+        return $this->damage;
+    }
+
+    // Settings des attributs
+    public function setHealth(int $health): void {
+        $this->health = $health;
     }
 
     // Méthode calculant les points de santé en fonction des dommages du héro

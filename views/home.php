@@ -10,7 +10,7 @@
         <section class="containerResults flexCenterCenter">
             <div class="contentResults flexCenterColumn">
                 <div class="containerContent flexCenterCenterColumn hidden">
-                    <?php while ($hero->health > 0 && $orc->health > 0) {
+                    <?php while ($hero->getHealth() > 0 && $orc->getHealth() > 0) {
                         $result = Character::fightBetweenHeroAndOrc($hero, $orc);
                         echo $result;
                     } ?>

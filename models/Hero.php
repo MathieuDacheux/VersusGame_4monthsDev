@@ -21,26 +21,67 @@ class Hero extends Character {
     }
 
     // Récupération des attributs
-    public function __get($attr) {
-        return $this->$attr;
+    public function getHealth(): int {
+        return $this->health;
     }
 
-    public function __set($attr, $value) {
-        $this->$attr = $value;
+    public function getRage(): int {
+        return $this->rage;
+    }
+
+    public function getWeapon(): string {
+        return $this->weapon;
+    }
+
+    public function getWeaponDamage(): int {
+        return $this->weaponDamage;
+    }
+
+    public function getShield(): string {
+        return $this->shield;
+    }
+
+    public function getShieldValue(): int {
+        return $this->shieldValue;
+    }
+
+    // Settings des attributs
+    public function setHealth(int $health): void {
+        $this->health = $health;
+    }
+
+    public function setRage(int $rage): void {
+        $this->rage = $rage;
+    }
+
+    public function setWeapon(string $weapon): void {
+        $this->weapon = $weapon;
+    }
+
+    public function setWeaponDamage(int $weaponDamage): void {
+        $this->weaponDamage = $weaponDamage;
+    }
+
+    public function setShield(string $shield): void {
+        $this->shield = $shield;
+    }
+
+    public function setShieldValue(int $shieldValue): void {
+        $this->shieldValue = $shieldValue;
     }
 
     // Méthode calculant les dommages en fonction du dommage, de la valeur de l'armure et de l'attaque
     public function attacked($damage) {
-        if ($this->shieldValue > $damage) {
-            $this->shieldValue -= $damage;
+        if ($this->getShieldValue() > $damage) {
+            $this->setShieldValue($this->getShieldValue() - $damage) ;
         } else {
-            $this->health -= $damage - $this->shieldValue;
-            $this->shieldValue = 0;
+            $this->setHealth($damage - $this->getShieldValue());
+            $this->setShieldValue(0);
         }
     }
 
     // Méthode calculant l'augmentation incrémentale de la rage
     public function increaseRage() {
-        $this->rage += 30;
+        $this->setRage($this->getRage() + 30);
     }
 }

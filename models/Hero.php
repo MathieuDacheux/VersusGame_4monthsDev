@@ -14,7 +14,7 @@ class Hero extends Character {
     public function __construct(int $health, int $rage, string $weapon, string $shield, int $shieldValue) {
         parent::__construct($health, $rage);
         $this->weapon = $weapon;
-        $this->weaponDamage = rand(300, 400);
+        $this->weaponDamage = 600;
         $this->shield = $shield;
         $this->shieldValue = $shieldValue;
         return 'Votre personnage a '.$this->health.', tient l\'arme '.$this->weapon.', qui inflige '.$this->weaponDamage.' points de dégats, et porte l\'armure '.$this->shield.', qui peut encaisser '.$this->shieldValue.' points de dégats.';

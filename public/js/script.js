@@ -87,4 +87,3 @@ triggerButton.addEventListener('click', () => {
         deleteShield(containerContent);
     }, 8000);
 });
-

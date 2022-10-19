@@ -62,7 +62,7 @@
 }
 
 .fighterOne img {
-    bottom: 20%;
+    bottom: 22%;
     left: 45%;
     animation: translateFighterOne 2.5s ease;
 }
@@ -78,7 +78,7 @@
 
 .fighterTwo img {
     transform: scaleX(-1);
-    bottom: 17%;
+    bottom: 18%;
     right: 45%;
     animation: translateFighterTwo 2.5s ease;
 }
@@ -99,7 +99,7 @@
     }
     
     .fighterOne img {
-        bottom: 22%;
+        bottom: 21%;
         left: 75%;
         animation: translateFighterOneDesktop 7s ease;
     }
@@ -115,7 +115,7 @@
     
     .fighterTwo img {
         transform: scaleX(-1);
-        bottom: 15%;
+        bottom: 16%;
         right: 75%;
         animation: translateFighterTwoDesktop 7s ease;
     }

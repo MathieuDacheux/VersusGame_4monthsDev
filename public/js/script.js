@@ -37,10 +37,15 @@ const changeFightersImage = (fighterOne, fighterTwo, imageOne, imageTwo) => {
 const whichDie = (messagesForFight, fighterOne, fighterTwo, index) => {
     if (messagesForFight[index].textContent == 'Le chevalier est mort !') {
         fighterOne.src = fighterOneDie;
+        fighterOne.style = 'filter: drop-shadow(16px 16px 20px black);';
         fighterTwo.src = fighterTwoWin;
+        fighterTwo.style = 'filter: drop-shadow(16px 16px 20px gold);';
     } else if (messagesForFight[index].textContent == 'Le chevalier a gagne !') {
         fighterTwo.src = fighterTwoDie;
+        fighterTwo.style = 'filter: drop-shadow(16px 16px 20px black);';
         fighterOne.src = fighterOneWin;
+        fighterOne.style = 'filter: drop-shadow(16px 16px 20px gold);';
+
     }
 }
 

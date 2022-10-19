@@ -7,6 +7,7 @@
     <meta name="description" content="Le meilleur jeu de la terre, Orc Must Die">
     <link rel="stylesheet" href="../../public/css/main.css">
     <link rel="stylesheet" href="../../public/css/body.css">
+    <link rel="shortcut icon" href="../../public/assets/img/firstKnight/win.gif" type="image/x-icon">
     <script defer src="../../public/js/script.js"></script>
     <title>Orc Must Die</title>
 </head>

@@ -55,7 +55,8 @@ h1 {
     color: white;
     background-color: var(--button);
     border-radius: 10px;
-    padding: .5rem 1rem;
+    padding: .35rem 1rem;
+    text-transform: uppercase;
 }
 
 p {

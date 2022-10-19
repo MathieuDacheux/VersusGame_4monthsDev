@@ -1,0 +1,129 @@
+/*********************** ************************/
+/**************** GLOBAL SETTINGS ***************/
+/*********************** ************************/
+
+:root {
+
+    /* Primary Color */
+    --title: #FF9300;
+
+    /* Base Color */
+
+
+    /* Accent Color */
+
+}
+
+@font-face {
+    font-family: 'Daenna';
+    src: url('../assets/fonts/Deanna/Deanna.ttf');
+}
+
+*, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 15px;
+    background: url('../assets/img/background.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    height: 10vh;
+    width: 100vw;
+}
+
+nav {
+    height: 100%;
+    width: 100%;
+}
+
+main {
+    height: 90vh;
+    width: 100vw;
+}
+
+/*********************** ************************/
+/****************** FONT SETTINGS ***************/
+/*********************** ************************/
+
+h1 {
+    font-size: 2rem;
+    font-family: 'Daenna', sans-serif;
+    color: var(--title)
+}
+
+h2 {
+    
+}
+
+h3 {
+    
+}
+
+h4 {
+    
+}
+
+p {
+    font-size: 1.5rem;
+    font-family: 'Daenna', sans-serif;
+}
+
+a {
+    
+}
+
+/*********************** ************************/
+/***************** MARGIN PADDING ***************/
+/*********************** ************************/
+
+
+/*********************** ************************/
+/****************** FLEX SETTINGS ***************/
+/*********************** ************************/
+
+.flexCenterVertical {
+    display: flex;
+    align-items: center;
+}
+
+.flexCenterHorizontal {
+    display: flex;
+    justify-content: center;
+}
+
+.flexCenterColumn {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flexCenterCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexCenterCenterColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexCenterAround {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flexCenterBetween {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

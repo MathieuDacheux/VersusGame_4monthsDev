@@ -7,7 +7,7 @@
     require_once(__DIR__.'/../helpers/functions.php');
 
     // Variables
-    $hero = new Hero(2500, 0, 'Marteau Bouftou', 'Panoplie du Bouftou', 600);
+    $hero = new Hero(2000, 0, 'Marteau Bouftou', 'Panoplie du Bouftou', 600);
     $orc = new Orc(2500, 0);
 
     // Appel des vues

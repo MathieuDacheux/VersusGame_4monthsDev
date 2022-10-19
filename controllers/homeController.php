@@ -8,8 +8,6 @@
 
     // Variables
     $hero = new Hero(2250, 0, 'Marteau Bouftou', 'Panoplie du Bouftou', 600);
-
-    var_dump($hero->getHealth());
     $orc = new Orc(3000, 0);
 
     // Appel des vues
